@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-function ResponsiveDrawer(props) {
+const ResponsiveDrawer = (props) => {
 	const { window } = props;
 	const classes = useStyles();
 	const theme = useTheme();
