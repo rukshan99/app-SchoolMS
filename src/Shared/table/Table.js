@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 		heads >>> array of props we want to put in the head of the table
 		body >>> array of the props to display in the body rows
 */
-const Table = (props) => {
+const MainTable = (props) => {
 	const classes = useStyles();
 	return (
 		<TableContainer component={Paper}>
@@ -170,4 +170,4 @@ const Table = (props) => {
 	);
 }
 
-export default Table;
+export default MainTable;

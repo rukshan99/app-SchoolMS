@@ -5,7 +5,7 @@ import axios from 'axios';
 import Loader from '../UIElements/Loader/Loader';
 import Intro from '../Shared/Intro/Intro';
 import ControlsBar from '../Shared/ControlsBar/ControlsBar';
-import Table from '../Shared/Table/Table';
+import MainTable from '../Shared/Table/Table';
 
 class StudentsTable extends Component {
 	state = {
@@ -118,7 +118,7 @@ class StudentsTable extends Component {
 					goToAdd={this.goToAdd}
 				/>
 				{this.state.students && (
-					<Table
+					<MainTable
 						classId={this.state.classId}
 						classes={this.state.classes}
 						addStudentToClass={this.addStudentToClassHandler}
