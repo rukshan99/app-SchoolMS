@@ -42,7 +42,7 @@ class AddStudent extends Component {
 				gender: gender,
 				email: email
 			};
-			const res = await axios.post('settings/students', body);
+			const res = { data: { message: ''}}//await axios.post('settings/students', body); --> later connect to backend
 			let doneObj = { message: res.data.message, type: 'success' };
 			this.setState({ loading: false, doneObj: doneObj });
 		} catch (error) {
