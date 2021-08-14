@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 
 import StudentsTable from './Students/StudentsTable';
+import AddStudent from './Students/AddStudent';
 import Layout from './Layout/Layout';
 import './App.css';
 
@@ -11,6 +12,7 @@ function App() {
         <Switch>
           <Route path='/' exact></Route>
           <Route path='/students' exact component={StudentsTable} />
+          <Route path='/students/add' exact component={AddStudent} />
         </Switch>
       </Layout>
     </div>

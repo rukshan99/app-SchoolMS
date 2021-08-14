@@ -2,7 +2,7 @@ import React from 'react';
 
 import Alert from '@material-ui/lab/Alert';
 
-const myAlert = (props) => {
+const MainAlert = (props) => {
 	return (
 		<div>
 			<Alert severity={props.type}>{props.message}</Alert>
@@ -10,4 +10,4 @@ const myAlert = (props) => {
 	);
 }
 
-export default myAlert;
+export default MainAlert;
