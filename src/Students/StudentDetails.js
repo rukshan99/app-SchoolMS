@@ -16,14 +16,7 @@ class StudentDetails extends Component {
         this.setState({ loading: true });
         const studentId = this.props.match.params.studentId;
         try {
-            const res = { data: { student: {
-                firstName: 'Rukshan',
-                lastName: 'Jay',
-                age: 20,
-                gender: 'Male',
-                joinedAt: '2009',
-                class: ['A', 'B']
-            }}}//await axios.get(`settings/student/${studentId}`);--> later connect to backend
+            const res = await axios.get(`api/v1/student/${studentId}`);
             if (res.data.student.class.length < 1) {
                 const doneObj = {
                     message: 'This Student is not in class, you should appoint a class for him',
