@@ -19,7 +19,7 @@ class StudentsTable extends Component {
 	getStudents = async () => {
 		try {
 			this.setState({ loading: true });
-			const res = await axios.get('api/v1/students');
+			const res = await axios.get('http://localhost:8000/api/v1/students');
 			this.setState({ loading: false, students: res.data.students });
 		} catch (error) {
 			console.log(error);
@@ -86,7 +86,7 @@ class StudentsTable extends Component {
 		if (this.state.searchText === '') return alert('Please insert something');
 		this.setState({ loading: true });
 		try {
-			const response = await axios.get(`api/v1/students/search/${this.state.searchText}`);
+			const response = await axios.get(`http://localhost:8000/api/v1/students/search/${this.state.searchText}`);
 			console.log('search -> res', response);
 			this.setState({ loading: false });
 			console.log(response.data.students);

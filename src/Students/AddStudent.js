@@ -42,7 +42,7 @@ class AddStudent extends Component {
 				gender: gender,
 				email: email
 			};
-			const res = await axios.post('api/v1/students', body);
+			const res = await axios.post('http://localhost:8000/api/v1/students', body);
 			let doneObj = { message: res.data.message, type: 'success' };
 			this.setState({ loading: false, doneObj: doneObj });
 		} catch (error) {
