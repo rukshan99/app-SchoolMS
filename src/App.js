@@ -4,6 +4,7 @@ import StudentsTable from './Students/StudentsTable';
 import AddStudent from './Students/AddStudent';
 import StudentDetails from './Students/StudentDetails';
 import Layout from './Layout/Layout';
+import SubjectsPanel from './Subjects/SubjectsPanel';
 import AddSubject from './Subjects/AddSubject';
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
           <Route path='/students/add' exact component={AddStudent} />
           <Route path='/students/:id' exact component={StudentDetails} />
 
+          <Route path='/Subjects' exact component={SubjectsPanel} />
           <Route path='/Subjects/Add' exact component={AddSubject} />
 
         </Switch>
