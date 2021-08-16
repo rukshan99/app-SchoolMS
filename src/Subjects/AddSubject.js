@@ -5,6 +5,9 @@ import Intro from '../Shared/Intro/Intro';
 import { Button } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import Loader from '../UIElements/Loader/Loader';
+
+import './AddSubject.scss' 
+
 export default class AddSubject extends Component {
 	state = {
 		name: '',
@@ -40,6 +43,7 @@ export default class AddSubject extends Component {
 				<Intro logo='School' thisCategory='Add Subject' />
 				<form onSubmit={this.addSubjectHandler}>
 					<div className='addForm'>
+						<div className='inps'>
 						<TextField
 							id='outlined-basic'
 							label='Subject Name'
@@ -49,6 +53,8 @@ export default class AddSubject extends Component {
 							style={{ width: '100%' }}
 							required
 						/>
+						</div>
+						<div className='inps'>
                         <TextField
 							id='outlined-basic'
 							label='Subject Code'
@@ -58,7 +64,9 @@ export default class AddSubject extends Component {
 							style={{ width: '100%' }}
 							required
 						/>
-                        <Textarea 
+						</div>
+						<div className='inps'>
+                        <TextField
 							id='outlined-basic'
 							label='Subject Description'
 							variant='outlined'
@@ -67,6 +75,7 @@ export default class AddSubject extends Component {
 							style={{ width: '100%' }}
 							required
 						/>
+						</div>
 						<br />
 						<br />
 						<Button variant='contained' color='primary' type='submit'>
