@@ -8,6 +8,8 @@ import Loader from '../UIElements/Loader/Loader';
 export default class AddSubject extends Component {
 	state = {
 		name: '',
+        code: '',
+        descrption: '',
 		loading: false,
 		doneObj: null
 	};
@@ -15,7 +17,7 @@ export default class AddSubject extends Component {
 	writeHandler = e => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
-    
+
 	// addSubjectHandler = async e => {    --> later connect to backend
 	// 	e.preventDefault();
 	// 	this.setState({ loading: true });
@@ -43,6 +45,24 @@ export default class AddSubject extends Component {
 							label='Subject Name'
 							variant='outlined'
 							name='name'
+							onChange={this.writeHandler}
+							style={{ width: '100%' }}
+							required
+						/>
+                        <TextField
+							id='outlined-basic'
+							label='Subject Code'
+							variant='outlined'
+							name='code'
+							onChange={this.writeHandler}
+							style={{ width: '100%' }}
+							required
+						/>
+                        <Textarea 
+							id='outlined-basic'
+							label='Subject Description'
+							variant='outlined'
+							name='descrption'
 							onChange={this.writeHandler}
 							style={{ width: '100%' }}
 							required
