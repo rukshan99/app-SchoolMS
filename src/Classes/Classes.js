@@ -8,37 +8,37 @@ export class Classes extends Component {
 		loading: false,
 		searchText: ''
 	};
-	// getClasses = async () => {
-	// 	this.setState({ loading: true });
-	// 	try {
-	// 		const res = await axios.get(`settings/classes`);
-	// 		this.setState({ classes: res.data.classes, loading: false });
-	// 	} catch (error) {
-	// 		this.setState({ loading: false });
+	getClasses = async () => {
+		this.setState({ loading: true });
+		try {
+			const res = await axios.get(`http://localhost:8000/api/v1/classes`);
+			this.setState({ classes: res.data.classes, loading: false });
+		} catch (error) {
+			this.setState({ loading: false });
 
-	// 		console.log(error);
-	// 		alert('something went wrong, please try again later');
-	// 	}
-	// };
+			console.log(error);
+			alert('something went wrong, please try again later');
+		}
+	};
 
 	goToAdd = () => {
 		this.props.history.push('/Classes/Add');
 	};
 
-	// goToEdit = classId => {
-	// 	this.props.history.push(`/Classes/Edit/${classId}`);
-	// };
+	goToEdit = classId => {
+		this.props.history.push(`/Classes/Edit/${classId}`);
+	};
 
-	// delete = async (classId, className) => {
-	// 	if (window.confirm(`Do You want to delete a subject with name ${className} ?`)) {
-	// 		try {
-	// 			await axios.delete(`settings/class/delete/${classId}`);
-	// 			this.getClasses();
-	// 		} catch (error) {
-	// 			alert(error.response.data.error);
-	// 		}
-	// 	}
-	// };
+	delete = async (classId, className) => {
+		if (window.confirm(`Do You want to delete a subject with name ${className} ?`)) {
+			try {
+				await axios.delete(`settings/class/delete/${classId}`);
+				this.getClasses();
+			} catch (error) {
+				alert(error.response.data.error);
+			}
+		}
+	};
 	searching = e => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
@@ -61,9 +61,9 @@ export class Classes extends Component {
 	// goToDetails = classId => {
 	// 	this.props.history.push(`/Classes/Details/${classId}`);
 	// };
-	// componentDidMount() {
-	// 	this.getClasses();
-	// }
+	componentDidMount() {
+		this.getClasses();
+	}
 	render() {
 		return (
 			<Fragment>
