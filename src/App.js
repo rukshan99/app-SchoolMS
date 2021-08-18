@@ -11,6 +11,7 @@ import AddClass from './Classes/AddClass';
 import './App.css';
 import Teachers from './Teachers/Teachers';
 import AddTeacher from './Teachers/AddTeacher';
+import TeacherDetails from './Teachers/TeacherDetails';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
           <Route path='/Teachers' exact component={Teachers} />
           <Route path='/Teachers/Add' exact component={AddTeacher} />
+          <Route path='/Teachers/:id' exact component={TeacherDetails} />
 
           <Route path='/Classes' exact component={Classes} />
           <Route path='/Classes/Add' exact component={AddClass} />
