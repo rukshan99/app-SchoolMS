@@ -44,7 +44,15 @@ class AddStudent extends Component {
 			};
 			const res = await axios.post('http://localhost:8000/api/v1/students', body);
 			let doneObj = { message: res.data.message, type: 'success' };
-			this.setState({ loading: false, doneObj: doneObj });
+			this.setState({
+				firstName: '', 
+				lastName: '',
+				email: '',
+				age: '',
+				gender: '',
+				loading: false, 
+				doneObj: doneObj
+			});
 		} catch (error) {
 			let doneObj = { message: error.response.data.error, type: 'error' };
 			this.setState({ loading: false, doneObj: doneObj });
@@ -63,6 +71,7 @@ class AddStudent extends Component {
 								variant='outlined'
 								style={{ width: '100%' }}
 								name='firstName'
+								value={this.state.firstName}
 								onChange={this.changeHandler}
 								required
 							/>
@@ -74,6 +83,7 @@ class AddStudent extends Component {
 								variant='outlined'
 								style={{ width: '100%' }}
 								name='lastName'
+								value={this.state.lastName}
 								onChange={this.changeHandler}
 								required
 							/>
@@ -88,6 +98,7 @@ class AddStudent extends Component {
 								style={{ width: '100%' }}
 								type='email'
 								name='email'
+								value={this.state.email}
 								onChange={this.changeHandler}
 								required
 							/>
@@ -100,6 +111,7 @@ class AddStudent extends Component {
 								variant='outlined'
 								style={{ width: '100%' }}
 								name='age'
+								value={this.state.age}
 								onChange={this.changeHandler}
 								required
 							/>
