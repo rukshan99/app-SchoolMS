@@ -58,9 +58,9 @@ export class Classes extends Component {
 	// 	}
 	// };
 
-	// goToDetails = classId => {
-	// 	this.props.history.push(`/Classes/Details/${classId}`);
-	// };
+	goToDetails = classId => {
+		this.props.history.push(`/Classes/Details/${classId}`);
+	};
 	componentDidMount() {
 		this.getClasses();
 	}
