@@ -93,7 +93,7 @@ class AddStudent extends Component {
 						<br />
 						<br />
 						{this.state.doneObj && (
-							<MyAlert message={this.state.doneObj.message} type={this.state.doneObj.type} />
+							<MainAlert message={this.state.doneObj.message} type={this.state.doneObj.type} />
 						)}
 					</div>
 				</form>
