@@ -7,6 +7,7 @@ import Layout from './Layout/Layout';
 import SubjectsPanel from './Subjects/SubjectsPanel';
 import AddSubject from './Subjects/AddSubject';
 import Classes from './Classes/Classes';
+import ClassDetails from './Classes/ClassDetails';
 import AddClass from './Classes/AddClass';
 import './App.css';
 import Teachers from './Teachers/Teachers';
@@ -32,6 +33,7 @@ function App() {
 
           <Route path='/Classes' exact component={Classes} />
           <Route path='/Classes/Add' exact component={AddClass} />
+          <Route path='/Classes/Details/:classId' exact component={ClassDetails} />
 
         </Switch>
       </Layout>
