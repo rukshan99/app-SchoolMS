@@ -25,23 +25,23 @@ export class Classes extends Component {
 		this.props.history.push('/Classes/Add');
 	};
 
-	goToEdit = classId => {
-		this.props.history.push(`/Classes/Edit/${classId}`);
-	};
+	// goToEdit = classId => {
+	// 	this.props.history.push(`/Classes/Edit/${classId}`);
+	// };
 
-	delete = async (classId, className) => {
-		if (window.confirm(`Do You want to delete a subject with name ${className} ?`)) {
-			try {
-				await axios.delete(`settings/class/delete/${classId}`);
-				this.getClasses();
-			} catch (error) {
-				alert(error.response.data.error);
-			}
-		}
-	};
-	searching = e => {
-		this.setState({ [e.target.name]: e.target.value });
-	};
+	// delete = async (classId, className) => {
+	// 	if (window.confirm(`Do You want to delete a subject with name ${className} ?`)) {
+	// 		try {
+	// 			await axios.delete(`settings/class/delete/${classId}`);
+	// 			this.getClasses();
+	// 		} catch (error) {
+	// 			alert(error.response.data.error);
+	// 		}
+	// 	}
+	// };
+	// searching = e => {
+	// 	this.setState({ [e.target.name]: e.target.value });
+	// };
 
 	// search = async () => {
 	// 	if (this.state.searchText === '') return alert('Please insert something');
