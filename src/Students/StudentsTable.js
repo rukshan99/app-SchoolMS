@@ -38,7 +38,7 @@ class StudentsTable extends Component {
 	};
 
 	goToDetails = studentId => {
-		this.props.history.push(`/Students/Details/${studentId}`);
+		this.props.history.push(`/students/${studentId}`);
 	};
 	delete = async (studentId, studentName) => {
 		if (window.confirm(`Are you sure you want to delete a teacher with name ${studentName} ?`)) {
