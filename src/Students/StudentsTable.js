@@ -19,7 +19,7 @@ class StudentsTable extends Component {
 	getStudents = async () => {
 		try {
 			this.setState({ loading: true });
-			const res = { data: { students: []}} //await axios.get('settings/students'); --> later connect to backend
+			const res = await axios.get('http://localhost:8000/api/v1/students');
 			this.setState({ loading: false, students: res.data.students });
 		} catch (error) {
 			console.log(error);
@@ -38,7 +38,7 @@ class StudentsTable extends Component {
 	};
 
 	goToDetails = studentId => {
-		this.props.history.push(`/Students/Details/${studentId}`);
+		this.props.history.push(`/students/${studentId}`);
 	};
 	delete = async (studentId, studentName) => {
 		if (window.confirm(`Are you sure you want to delete a teacher with name ${studentName} ?`)) {
@@ -86,7 +86,7 @@ class StudentsTable extends Component {
 		if (this.state.searchText === '') return alert('Please insert something');
 		this.setState({ loading: true });
 		try {
-			const response = { data: { students: []}}//await axios.get(`settings/students/search/${this.state.searchText}`); --> later connect to backend
+			const response = await axios.get(`http://localhost:8000/api/v1/students/search/${this.state.searchText}`);
 			console.log('search -> res', response);
 			this.setState({ loading: false });
 			console.log(response.data.students);
