@@ -62,7 +62,7 @@ class StudentsTable extends Component {
 		const classId = this.state.classId;
 		try {
 			const body = { classId: classId, studentId: studentId };
-			//await axios.patch(`settings/class/addStudent`, body); --> later connect to backend
+			await axios.patch(`http://localhost:8000/api/v1/class/addStudent`, body);
 			this.getStudents();
 		} catch (error) {
 			alert(error.response.data.error);
@@ -72,12 +72,13 @@ class StudentsTable extends Component {
 
 	getClassesForSelecting = async () => {
 		try {
-			const res = { data: { classes: []}}//await axios.get('settings/classes'); --> later connect to backend
+			const res = await axios.get('http://localhost:8000/api/v1/classes');
 			this.setState({ classes: res.data.classes });
 		} catch (error) {
 			alert('error');
 		}
 	};
+
 	searching = e => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
