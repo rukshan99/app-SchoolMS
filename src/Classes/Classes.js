@@ -8,18 +8,18 @@ export class Classes extends Component {
 		loading: false,
 		searchText: ''
 	};
-	// getClasses = async () => {
-	// 	this.setState({ loading: true });
-	// 	try {
-	// 		const res = await axios.get(`settings/classes`);
-	// 		this.setState({ classes: res.data.classes, loading: false });
-	// 	} catch (error) {
-	// 		this.setState({ loading: false });
+	getClasses = async () => {
+		this.setState({ loading: true });
+		try {
+			const res = await axios.get(`http://localhost:8000/api/v1/classes`);
+			this.setState({ classes: res.data.classes, loading: false });
+		} catch (error) {
+			this.setState({ loading: false });
 
-	// 		console.log(error);
-	// 		alert('something went wrong, please try again later');
-	// 	}
-	// };
+			console.log(error);
+			alert('something went wrong, please try again later');
+		}
+	};
 
 	goToAdd = () => {
 		this.props.history.push('/Classes/Add');
@@ -39,9 +39,9 @@ export class Classes extends Component {
 	// 		}
 	// 	}
 	// };
-	searching = e => {
-		this.setState({ [e.target.name]: e.target.value });
-	};
+	// searching = e => {
+	// 	this.setState({ [e.target.name]: e.target.value });
+	// };
 
 	// search = async () => {
 	// 	if (this.state.searchText === '') return alert('Please insert something');
@@ -61,9 +61,9 @@ export class Classes extends Component {
 	// goToDetails = classId => {
 	// 	this.props.history.push(`/Classes/Details/${classId}`);
 	// };
-	// componentDidMount() {
-	// 	this.getClasses();
-	// }
+	componentDidMount() {
+		this.getClasses();
+	}
 	render() {
 		return (
 			<Fragment>
