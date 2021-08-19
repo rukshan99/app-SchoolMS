@@ -10,25 +10,25 @@ export class SubjectDetails extends Component {
 		subject: null
 	};
 
-	// getSubject = async () => {
-	// 	try {
-	// 		this.setState({ loading: true });
-	// 		const subjectId = this.props.match.params.subjectId;
-	// 		console.log('SubjectDetails -> getSubject -> subjectId', subjectId);
+	getSubject = async () => {
+		try {
+			this.setState({ loading: true });
+			const subjectId = this.props.match.params.subjectId;
+			console.log('SubjectDetails -> getSubject -> subjectId', subjectId);
 
-	// 		const res = await axios.get(`settings/subject/${subjectId}`);
-	// 		console.log('SubjectDetails -> getSubject -> res', res);
-	// 		this.setState({ loading: false, subject: res.data.subject });
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
+			const res = await axios.get(`http://localhost:8000/api/v1/subject/${subjectId}`);
+			console.log('SubjectDetails -> getSubject -> res', res);
+			this.setState({ loading: false, subject: res.data.subject });
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-	// componentDidMount() {
-	// 	console.log('workinggg');
+	componentDidMount() {
+		console.log('workinggg');
 
-	// 	this.getSubject();
-	// }
+		this.getSubject();
+	}
 	render() {
 		return (
 			<div>

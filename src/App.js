@@ -6,10 +6,14 @@ import StudentDetails from './Students/StudentDetails';
 import Layout from './Layout/Layout';
 import SubjectsPanel from './Subjects/SubjectsPanel';
 import AddSubject from './Subjects/AddSubject';
+import Classes from './Classes/Classes';
+import ClassDetails from './Classes/ClassDetails';
+import AddClass from './Classes/AddClass';
 import './App.css';
 import Teachers from './Teachers/Teachers';
 import AddTeacher from './Teachers/AddTeacher';
 import SubjectDetails from './Subjects/SubjectDetails';
+import TeacherDetails from './Teachers/TeacherDetails';
 
 function App() {
   return (
@@ -27,6 +31,11 @@ function App() {
 
           <Route path='/Teachers' exact component={Teachers} />
           <Route path='/Teachers/Add' exact component={AddTeacher} />
+          <Route path='/Teachers/:id' exact component={TeacherDetails} />
+
+          <Route path='/Classes' exact component={Classes} />
+          <Route path='/Classes/Add' exact component={AddClass} />
+          <Route path='/Classes/Details/:classId' exact component={ClassDetails} />
 
         </Switch>
       </Layout>
