@@ -33,9 +33,9 @@ export class SubjectsPanel extends Component {
 		this.props.history.push(`/Subjects/Edit/${subjectId}`);
 	};
 
-	goToDetails = subjectId => {
-		this.props.history.push(`/Subjects/Details/${subjectId}`);
-	};
+	// goToDetails = subjectId => {
+	// 	this.props.history.push(`/Subjects/Details/${subjectId}`);
+	// };
 	deleteSubject = async (subjectId, subjectName) => {
 		if (window.confirm(`Do you want to delete a subject with name ${subjectName}`)) {
 			try {
