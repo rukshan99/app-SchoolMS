@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import axios from 'axios';
+
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -31,22 +33,22 @@ class AddTeacher extends Component {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
-    // getSubjectsForSelecting = async () => {
-	// 	try {
-	// 		this.setState({ loading: true });
-	// 		const res = await axios.get('settings/subjects');
-	// 		console.log(res.data.subjects);
-	// 		this.setState({
-	// 			loading: false,
-	// 			subjects: res.data.subjects
-	// 			// subjectId: res.data.subjects[0]._id.toString()
-	// 		});
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 		let doneObj = { message: error.response.data.error, type: 'error' };
-	// 		this.setState({ loading: false, doneObj: doneObj });
-	// 	}
-	// };
+    getSubjectsForSelecting = async () => {
+		try {
+			this.setState({ loading: true });
+			const res = await axios.get('http://localhost:8000/api/v1/subjects');
+			console.log(res.data.subjects);
+			this.setState({
+				loading: false,
+				subjects: res.data.subjects
+				// subjectId: res.data.subjects[0]._id.toString()
+			});
+		} catch (error) {
+			console.log(error);
+			let doneObj = { message: error.response.data.error, type: 'error' };
+			this.setState({ loading: false, doneObj: doneObj });
+		}
+	};
 
     submitHandler = async e => {
 		this.setState({ loading: true });
@@ -64,8 +66,7 @@ class AddTeacher extends Component {
 				subjectId: subjectId
 			};
 			console.log('addTeachers -> body', body);
-            const res = { data: { message: ''}}
-			// const res = await axios.post('settings/teachers', body);
+			const res = await axios.post('http://localhost:8000/api/v1/teachers', body);
 			let doneObj = { message: res.data.message, type: 'success' };
 			this.setState({ loading: false, doneObj: doneObj });
 		} catch (error) {
@@ -74,9 +75,9 @@ class AddTeacher extends Component {
 		}
 	};
 
-    // componentDidMount() {
-	// 	this.getSubjectsForSelecting();
-	// }
+    componentDidMount() {
+		this.getSubjectsForSelecting();
+	}
 
     render() {
 		return (
@@ -177,16 +178,16 @@ class AddTeacher extends Component {
 									id='demo-simple-select-filled'
 									label='Subject'
 									name='subjectId'
-									// value={this.state.subject}
+									value={this.state.subject}
 									onChange={this.changeHandler}
 									required
 								>
-									{/* {this.state.subjects &&
+									{this.state.subjects &&
 										this.state.subjects.map(subject => (
 											<MenuItem key={subject._id.toString()} value={subject._id.toString()}>
 												{subject.name}
 											</MenuItem>
-										))} */}
+										))}
 								</Select>
 							</FormControl>
 						</div>
