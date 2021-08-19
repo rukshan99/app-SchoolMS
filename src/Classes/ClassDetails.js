@@ -46,6 +46,9 @@ export default class ClassDetails extends Component {
 				{this.state.classObj && (
 					<div>
 						<Intro thisCategory={this.state.classObj.name} logo='Class' />
+						<div><h2>Class Code : {this.state.classObj.code}</h2>
+						<h2>Class Description : {this.state.classObj.description}</h2>
+						</div>
 						{this.state.classObj.realStudents.length > 0 ? (
 							<div>
 								<h2 style={{ textAlign: 'center' }}>Class Students</h2>
