@@ -27,7 +27,7 @@ function App() {
 
           <Route path='/Subjects' exact component={SubjectsPanel} />
           <Route path='/Subjects/Add' exact component={AddSubject} />
-          <Route path='/classes' exact component={ClassDetails} />
+          <Route path='/Subjects/Details/:subjectId' exact component={SubjectDetails} />
 
           <Route path='/Teachers' exact component={Teachers} />
           <Route path='/Teachers/Add' exact component={AddTeacher} />
