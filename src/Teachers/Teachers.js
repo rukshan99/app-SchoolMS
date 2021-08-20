@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import axios from 'axios';
+
 import ControlsBar from '../Shared/ControlsBar/ControlsBar';
 import Intro from '../Shared/Intro/Intro';
 import Loader  from '../UIElements/Loader/Loader';
@@ -15,9 +17,7 @@ class Teachers extends Component {
 	getTeachers = async () => {
 		try {
 			this.setState({ loading: true });
-			// const res = await axios.get('settings/teachers');
-			const res = { data: { teachers: []}}
-			// this.setState({ loading: false, teachers: res.data.teachers });
+			const res = await axios.get('http://localhost:8000/api/v1/teachers');
 			this.setState({ loading: false, teachers: res.data.teachers });
 		} catch (error) {
 			console.log(error);
@@ -31,13 +31,13 @@ class Teachers extends Component {
 		this.props.history.push('/Teachers/Add');
 	};
 
-	goToDetails = teacherId => {
-		this.props.history.push(`/Teachers/Details/${teacherId}`);
-	};
+	// goToDetails = teacherId => {
+	// 	this.props.history.push(`/Teachers/Details/${teacherId}`);
+	// };
 
-	searching = e => {
-		this.setState({ [e.target.name]: e.target.value });
-	};
+	// searching = e => {
+	// 	this.setState({ [e.target.name]: e.target.value });
+	// };
 
 	// search = async () => {
 	// 	if (this.state.searchText === '') return alert('Please insert something');
