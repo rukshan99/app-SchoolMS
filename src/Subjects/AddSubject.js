@@ -12,7 +12,7 @@ export default class AddSubject extends Component {
 	state = {
 		name: '',
         code: '',
-        descrption: '',
+        description: '',
 		loading: false,
 		doneObj: null
 	};
@@ -21,21 +21,28 @@ export default class AddSubject extends Component {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
-	// addSubjectHandler = async e => {    --> later connect to backend
-	// 	e.preventDefault();
-	// 	this.setState({ loading: true });
-	// 	try {
-	// 		// const addingResult = await axios.post('settings/subjects', { name: this.state.name });
-	// 		// console.log('AddSubject -> addingResult', addingResult);
-	// 		// let doneObj = { message: addingResult.data.message, type: 'success' };
+	addSubjectHandler = async e => {  
+		e.preventDefault();
+		this.setState({ loading: true });
+		try {
+			const { name, code, description } = this.state;
+			const body = {
+				name: name,
+				code: code,
+				description: description
+			};
 
-	// 		this.setState({ loading: false, doneObj: doneObj });
-	// 	} catch (error) {
-	// 		console.log(error.response.data.error);
-	// 		let doneObj = { message: error.response.data.error, type: 'error' };
-	// 		this.setState({ loading: false, doneObj: doneObj });
-	// 	}
-	// };
+			const addingResult = await axios.post('http://localhost:8000/api/v1/subjects',body);
+			console.log('AddSubject -> addingResult', addingResult);
+			let doneObj = { message: addingResult.data.message, type: 'success' };
+
+			this.setState({ loading: false, doneObj: doneObj });
+		} catch (error) {
+			console.log(error.response.data.error);
+			let doneObj = { message: error.response.data.error, type: 'error' };
+			this.setState({ loading: false, doneObj: doneObj });
+		}
+	};
 
 	render() {
 		return (
@@ -70,7 +77,7 @@ export default class AddSubject extends Component {
 							id='outlined-basic'
 							label='Subject Description'
 							variant='outlined'
-							name='descrption'
+							name='description'
 							onChange={this.writeHandler}
 							style={{ width: '100%' }}
 							required

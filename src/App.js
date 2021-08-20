@@ -12,6 +12,7 @@ import AddClass from './Classes/AddClass';
 import './App.css';
 import Teachers from './Teachers/Teachers';
 import AddTeacher from './Teachers/AddTeacher';
+import SubjectDetails from './Subjects/SubjectDetails';
 import TeacherDetails from './Teachers/TeacherDetails';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
 
           <Route path='/Subjects' exact component={SubjectsPanel} />
           <Route path='/Subjects/Add' exact component={AddSubject} />
+          <Route path='/Subjects/Details/:subjectId' exact component={SubjectDetails} />
 
           <Route path='/Teachers' exact component={Teachers} />
           <Route path='/Teachers/Add' exact component={AddTeacher} />
