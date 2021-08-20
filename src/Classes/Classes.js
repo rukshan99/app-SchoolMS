@@ -43,27 +43,26 @@ export class Classes extends Component {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
-	// search = async () => {
-	// 	if (this.state.searchText === '') return alert('Please insert something');
-	// 	this.setState({ loading: true });
-	// 	try {
-	// 		const res = await axios.get(`settings/classes/search/${this.state.searchText}`);
-	// 		this.setState({ loading: false });
-	// 		if (res.data.classes.length < 1) {
-	// 			return alert('Classes Not Found!');
-	// 		}
-	// 		this.setState({ classes: res.data.classes });
-	// 	} catch (error) {
-	// 		alert(error.response.data.error);
-	// 	}
-	// };
+	searching = e => {
+		this.setState({ [e.target.name]: e.target.value });
+	};
 
-	// goToDetails = classId => {
-	// 	this.props.history.push(`/Classes/Details/${classId}`);
-	// };
-	// componentDidMount() {
-	// 	this.getClasses();
-	// }
+	search = async () => {
+		if (this.state.searchText === '') return alert('Please insert something');
+		this.setState({ loading: true });
+		try {
+			const res = await axios.get(`http://localhost:8000/api/v1/classes/search/${this.state.searchText}`);
+			this.setState({ loading: false });
+			if (res.data.classes.length < 1) {
+				return alert('Classes Not Found!');
+			}
+			console.log(res.data)
+			this.setState({ classes: res.data.classes });
+		} catch (error) {
+			alert(error.response.data.error);
+		}
+	};
+	
 	render() {
 		return (
 			<Fragment>
