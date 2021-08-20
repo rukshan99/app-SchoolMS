@@ -38,6 +38,10 @@ export class SubjectDetails extends Component {
 
 						{this.state.subject.realTeachers.length > 0 ? (
 							<div>
+								<div>
+									<h2>Subject Code : {this.state.subject.code}</h2>
+									<h2>Subject Description : {this.state.subject.description}</h2>
+								</div>
 								<h2 style={{ textAlign: 'center' }}>Subject Teachers</h2>
 								<Table
 									items={this.state.subject.realTeachers}
