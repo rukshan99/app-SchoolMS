@@ -47,24 +47,24 @@ export class SubjectsPanel extends Component {
 	// 	}
 	// };
 
-	// searching = e => {
-	// 	this.setState({ [e.target.name]: e.target.value });
-	// };
+	searching = e => {
+		this.setState({ [e.target.name]: e.target.value });
+	};
 
-	// search = async () => {
-	// 	if (this.state.searchText === '') return alert('Please insert something');
-	// 	this.setState({ loading: true });
-	// 	try {
-	// 		// const res = await axios.get(`settings/subjects/search/${this.state.searchText}`);
-	// 		this.setState({ loading: false });
-	// 		// if (res.data.subjects.length < 1) {
-	// 		// 	return alert('Subjects Not Found!');
-	// 		// }
-	// 		// this.setState({ subjects: res.data.subjects });
-	// 	} catch (error) {
-	// 		alert(error.response.data.error);
-	// 	}
-	// };
+	search = async () => {
+		if (this.state.searchText === '') return alert('Please insert something');
+		this.setState({ loading: true });
+		try {
+			const res = await axios.get(`http://localhost:8000/api/v1/subjects/search/${this.state.searchText}`);
+			this.setState({ loading: false });
+			if (res.data.subjects.length < 1) {
+				return alert('Subjects Not Found!');
+			}
+			this.setState({ subjects: res.data.subjects });
+		} catch (error) {
+			alert(error.response.data.error);
+		}
+	};
 	render() {
 		return (
 			<Fragment>
