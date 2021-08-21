@@ -31,7 +31,7 @@ function App() {
 
           <Route path='/Teachers' exact component={Teachers} />
           <Route path='/Teachers/Add' exact component={AddTeacher} />
-          <Route path='/Teachers/:id' exact component={TeacherDetails} />
+          <Route path='/Teachers/Details/:id' exact component={TeacherDetails} />
 
           <Route path='/Classes' exact component={Classes} />
           <Route path='/Classes/Add' exact component={AddClass} />
