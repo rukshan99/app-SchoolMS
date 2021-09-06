@@ -49,7 +49,7 @@ const ControlsBar = (props) => {
 					color="secondary"
 					className={classes.button}
 					startIcon={<AssessmentIcon />}
-					onClick={() => { alert('Later link this to report generating component') }}
+					href={props.reportURL}
 				>
 					Generate Report
       			</Button>
