@@ -14,6 +14,7 @@ import Teachers from './Teachers/Teachers';
 import AddTeacher from './Teachers/AddTeacher';
 import SubjectDetails from './Subjects/SubjectDetails';
 import TeacherDetails from './Teachers/TeacherDetails';
+import StudentsByAge from './Students/StudentsByAge';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/students' exact component={StudentsTable} />
           <Route path='/students/add' exact component={AddStudent} />
           <Route path='/students/:id' exact component={StudentDetails} />
+          <Route path='/students-by-age' exact component={StudentsByAge} />
 
           <Route path='/Subjects' exact component={SubjectsPanel} />
           <Route path='/Subjects/Add' exact component={AddSubject} />
