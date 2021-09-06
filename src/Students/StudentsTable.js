@@ -117,7 +117,7 @@ class StudentsTable extends Component {
 					thisCategory='Students'
 					adding={true}
 					goToAdd={this.goToAdd}
-					reportURL='/students/students-by-age'
+					reportURL='/students-by-age'
 				/>
 				{this.state.students && (
 					<MainTable
