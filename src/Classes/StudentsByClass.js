@@ -34,7 +34,6 @@ class StudentsByClass extends Component {
       const res = await axios.get('http://localhost:8000/api/v1/students-by-class');
       
       this.generateBgColors(res.data.studentsByClass.length);
-      console.log(res.data.studentsByClass)
 
       let classes = this.state.data.labels.slice();
       let classCounts = this.state.data.datasets[0].data.slice();
