@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Boxes from '../Shared/Boxes/Boxes'
+import ControlsBar from '../Shared/ControlsBar/ControlsBar';
 
 export class Classes extends Component {
 	state = {
@@ -29,16 +30,16 @@ export class Classes extends Component {
 	// 	this.props.history.push(`/Classes/Edit/${classId}`);
 	// };
 
-	// delete = async (classId, className) => {
-	// 	if (window.confirm(`Do You want to delete a subject with name ${className} ?`)) {
-	// 		try {
-	// 			await axios.delete(`settings/class/delete/${classId}`);
-	// 			this.getClasses();
-	// 		} catch (error) {
-	// 			alert(error.response.data.error);
-	// 		}
-	// 	}
-	// };
+	delete = async (classId, className) => {
+		if (window.confirm(`Do You want to delete a subject with name ${className} ?`)) {
+			try {
+				await axios.delete(`http://localhost:8000/api/v1/class/delete/${classId}`);
+				this.getClasses();
+			} catch (error) {
+				alert(error.response.data.error);
+			}
+		}
+	};
 	searching = e => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
@@ -68,6 +69,7 @@ export class Classes extends Component {
 	render() {
 		return (
 			<Fragment>
+				
 				<Boxes
 					searching={this.searching}
 					search={this.search}
@@ -75,6 +77,7 @@ export class Classes extends Component {
 					loading={this.state.loading}
 					logo='Class'
 					thisCategory='Classes'
+					reportURL='/students-by-class'
 					goToAdd={this.goToAdd}
 					goToEdit={this.goToEdit}
 					goToDetails={this.goToDetails}
