@@ -22,20 +22,20 @@ export default class ClassDetails extends Component {
 		}
 	};
 
-	// removeStudentFromClass = async (studentId, studentName) => {
-	// 	const classId = this.props.match.params.classId;
-	// 	try {
-	// 		if (
-	// 			window.confirm(`Are you sure you want to remove a student with name ${studentName} from this class ?`)
-	// 		) {
-	// 			const body = { classId: classId, studentId: studentId };
-	// 			await axios.patch(`settings/class/removeStudent`, body);
-	// 			this.getClass();
-	// 		}
-	// 	} catch (error) {
-	// 		alert(error.response.data.error);
-	// 	}
-	// };
+	removeStudentFromClass = async (studentId, studentName) => {
+		const classId = this.props.match.params.classId;
+		try {
+			if (
+				window.confirm(`Are you sure you want to remove a student with name ${studentName} from this class ?`)
+			) {
+				const body = { classId: classId, studentId: studentId };
+				await axios.patch(`http://localhost:8000/api/v1/class/removeStudent`, body);
+				this.getClass();
+			}
+		} catch (error) {
+			alert(error.response.data.error);
+		}
+	};
 
 	componentDidMount() {
 		this.getClass();
