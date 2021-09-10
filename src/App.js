@@ -15,6 +15,7 @@ import AddTeacher from './Teachers/AddTeacher';
 import SubjectDetails from './Subjects/SubjectDetails';
 import TeacherDetails from './Teachers/TeacherDetails';
 import StudentsByAge from './Students/StudentsByAge';
+import StudentsByClass from './Classes/StudentsByClass';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path='/Classes' exact component={Classes} />
           <Route path='/Classes/Add' exact component={AddClass} />
           <Route path='/Classes/Details/:classId' exact component={ClassDetails} />
+          <Route path='/students-by-class' exact component={StudentsByClass} />
 
         </Switch>
       </Layout>
