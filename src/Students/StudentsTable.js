@@ -34,7 +34,7 @@ class StudentsTable extends Component {
 	};
 
 	goToEdit = studentId => {
-		this.props.history.push(`/Students/Edit/${studentId}`);
+		this.props.history.push(`/students/edit/${studentId}`);
 	};
 
 	goToDetails = studentId => {

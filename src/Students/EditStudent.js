@@ -25,7 +25,7 @@ class EditStudent extends Component {
 
 	getStudent = async () => {
 		this.setState({ loading: true });
-		const studentId = this.props.match.params.studentId;
+		const studentId = this.props.match.params.id;
 		try {
 			const res = await axios.get(`http://localhost:8000/api/v1/student/${studentId}`);
 			const student = res.data.student;
@@ -57,7 +57,7 @@ class EditStudent extends Component {
 				age: +age,
 				gender: gender,
 				email: email,
-				studentId: this.props.match.params.studentId
+				studentId: this.props.match.params.id
 			};
 			const res = await axios.patch('http://localhost:8000/api/v1/student/edit', body);
 			let doneObj = { message: res.data.message, type: 'success' };
