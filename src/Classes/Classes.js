@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Boxes from '../Shared/Boxes/Boxes'
+import ControlsBar from '../Shared/ControlsBar/ControlsBar';
 
 export class Classes extends Component {
 	state = {
@@ -68,6 +69,7 @@ export class Classes extends Component {
 	render() {
 		return (
 			<Fragment>
+				
 				<Boxes
 					searching={this.searching}
 					search={this.search}
@@ -75,6 +77,7 @@ export class Classes extends Component {
 					loading={this.state.loading}
 					logo='Class'
 					thisCategory='Classes'
+					reportURL='/students-by-class'
 					goToAdd={this.goToAdd}
 					goToEdit={this.goToEdit}
 					goToDetails={this.goToDetails}

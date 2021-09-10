@@ -27,6 +27,7 @@ function Boxes(props) {
 						search={props.search}
 						searching={props.searching}
 						thisCategory={props.thisCategory}
+						reportURL={props.reportURL}
 						goToAdd={props.goToAdd}
 						adding={true}
 					/>
