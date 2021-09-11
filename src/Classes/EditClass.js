@@ -73,7 +73,7 @@ export default class EditClass extends Component {
 						<Intro logo='Class' thisCategory={`Edit Class ${this.state.name}`} />
 						<form onSubmit={this.addClassHandler}>
 							<div className='addForm'>
-                            <div className='inps'>
+                            {/* <div className='inps'>
 						        <TextField
 							        id='outlined-basic'
 							        label='Class Name'
@@ -83,7 +83,7 @@ export default class EditClass extends Component {
 							        style={{ width: '100%' }}
 							        required
 						        />
-						    </div>
+						    </div> */}
                             <div className='inps'>
 						        <TextField
 							        id='outlined-basic'
