@@ -18,6 +18,7 @@ import StudentsByAge from './Students/StudentsByAge';
 import StudentsByClass from './Classes/StudentsByClass';
 import EditStudent from './Students/EditStudent';
 import EditClass from './Classes/EditClass';
+import EditSubject from './Subjects/EditSubject';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path='/Subjects' exact component={SubjectsPanel} />
           <Route path='/Subjects/Add' exact component={AddSubject} />
           <Route path='/Subjects/Details/:subjectId' exact component={SubjectDetails} />
+          <Route path='/subjects/edit/:subjectId' exact component={EditSubject}/>
+
 
           <Route path='/Teachers' exact component={Teachers} />
           <Route path='/Teachers/Add' exact component={AddTeacher} />
