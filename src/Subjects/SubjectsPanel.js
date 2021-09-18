@@ -36,16 +36,16 @@ export class SubjectsPanel extends Component {
 	goToDetails = subjectId => {
 		this.props.history.push(`/Subjects/Details/${subjectId}`);
 	};
-	// deleteSubject = async (subjectId, subjectName) => {
-	// 	if (window.confirm(`Do you want to delete a subject with name ${subjectName}`)) {
-	// 		try {
-	// 			// await axios.delete(`settings/subjects/delete/${subjectId.toString()}`);
-	// 			this.getSubjects();
-	// 		} catch (error) {
-	// 			console.log(error);
-	// 		}
-	// 	}
-	// };
+	deleteSubject = async (subjectId, subjectName) => {
+		if (window.confirm(`Do you want to delete a subject with name ${subjectName} ?`)) {
+			try {
+				await axios.delete(`http://localhost:8000/api/v1/subjects/delete/${subjectId}`);
+				this.getSubjects();
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	};
 
 	searching = e => {
 		this.setState({ [e.target.name]: e.target.value });
