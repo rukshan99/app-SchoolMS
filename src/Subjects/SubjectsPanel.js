@@ -75,6 +75,7 @@ export class SubjectsPanel extends Component {
 					loading={this.state.loading}
 					logo='School'
 					thisCategory='Subjects'
+					reportURL='/teachers-by-subject'
 					goToAdd={this.goToAddSubjects}
 					goToEdit={this.goToEditSubject}
 					delete={this.deleteSubject}
