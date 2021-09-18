@@ -27,11 +27,11 @@ export class SubjectsPanel extends Component {
 		this.props.history.push('/Subjects/Add');
 	};
 
-	// goToEditSubject = subjectId => {
-	// 	console.log('Subjects -> subjectId', subjectId, typeof subjectId);
+	goToEditSubject = subjectId => {
+		console.log('Subjects -> subjectId', subjectId, typeof subjectId);
 
-	// 	this.props.history.push(`/Subjects/Edit/${subjectId}`);
-	// };
+		this.props.history.push(`/Subjects/Edit/${subjectId}`);
+	};
 
 	goToDetails = subjectId => {
 		this.props.history.push(`/Subjects/Details/${subjectId}`);
