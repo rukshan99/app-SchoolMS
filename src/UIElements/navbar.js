@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -7,7 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import { School, Class, People, Person } from '@material-ui/icons';
+import { School, Class, People, Person, PowerSettingsNew } from '@material-ui/icons';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -69,22 +69,40 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ResponsiveDrawer = (props) => {
-	const { window } = props;
+	const { _window } = props;
 	const classes = useStyles();
 	const theme = useTheme();
+	const history = useHistory();
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
 
+	const onSignOut = (text) => {
+		if (text === 'Sign out') {
+			localStorage.removeItem('username');
+			localStorage.removeItem('password');
+			history.push('/');
+			window.location.reload(false);
+			return '/';
+		} else {
+			return text;
+		}
+	}
 	const drawer = (
 		<div>
 			<div className={classes.toolbar} />
 			<Divider />
 			<List>
-				{['Subjects', 'Teachers', 'Classes', 'Students'].map((text, index) => (
-					<NavLink to={`/${text}`} activeClassName='navActive' className='navItemLink' key={index}>
+				{['Subjects', 'Teachers', 'Classes', 'Students', 'Sign out'].map((text, index) => (
+					<NavLink 
+						to={`${text === 'Sign out' ? '/' : `/${text}`}`}
+						activeClassName='navActive' 
+						className='navItemLink' 
+						key={index}
+						onClick={onSignOut.bind(this, text)}
+						>
 						<ListItem button key={text}>
 							<ListItemIcon>
 								{text === 'Subjects' ? (
@@ -95,6 +113,8 @@ const ResponsiveDrawer = (props) => {
 									<Person />
 								) : text === 'Students' ? (
 									<People />
+								) : text === 'Sign out' ? (
+									<PowerSettingsNew />
 								) : null}
 							</ListItemIcon>
 							<ListItemText primary={text} />
@@ -105,7 +125,7 @@ const ResponsiveDrawer = (props) => {
 		</div>
 	);
 
-	const container = window !== undefined ? () => window().document.body : undefined;
+	const container = _window !== undefined ? () => _window().document.body : undefined;
 
 	return (
 		<div className={classes.root}>
@@ -176,7 +196,7 @@ ResponsiveDrawer.propTypes = {
    * Injected by the documentation to work in an iframe.
    * may be won't need it.
    */
-	window: PropTypes.func
+	_window: PropTypes.func
 };
 
 export default ResponsiveDrawer;
