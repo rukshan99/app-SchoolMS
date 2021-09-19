@@ -21,6 +21,7 @@ import EditClass from './Classes/EditClass';
 import EditSubject from './Subjects/EditSubject';
 import TeachersBySubject from './Subjects/TeachersBySubject';
 import EditTeacher from './Teachers/EditTeacher';
+import TeachersBySalary from './Teachers/TeachersBySalary';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path='/Teachers/Add' exact component={AddTeacher} />
           <Route path='/Teachers/Details/:id' exact component={TeacherDetails} />
           <Route path='/Teachers/edit/:id' exact component={EditTeacher} />
+          <Route path='/teachers-by-salary' exact component={TeachersBySalary} />
 
           <Route path='/Classes' exact component={Classes} />
           <Route path='/Classes/Add' exact component={AddClass} />
