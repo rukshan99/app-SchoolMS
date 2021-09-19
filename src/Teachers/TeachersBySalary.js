@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
+import DownloadPDF from '../helpers/DownloadPDF';
 
 class TeachersBySalary extends Component {
   state = {
@@ -87,12 +88,16 @@ class TeachersBySalary extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div id="report" className="report">
         <div className='header'>
           <h1 className='title'>Teachers By Salary Report</h1>
         </div>
+        <DownloadPDF
+          downloadFileName="Teachers by Salary"
+          rootElementId="report"
+        />
         <Bar data={this.state.data} options={this.state.options} />
-      </React.Fragment>
+      </div>
     );
   }
 }
