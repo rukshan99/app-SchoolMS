@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
+import DownloadPDF from '../helpers/DownloadPDF';
 
 class StudentsByAge extends Component {
   state = {
@@ -44,8 +45,8 @@ class StudentsByAge extends Component {
         this.setState({
           data: {
             ...this.state.data,
-            labels: ages, 
-            datasets:[
+            labels: ages,
+            datasets: [
               {
                 ...this.state.data.datasets[0],
                 data: ageCounts
@@ -87,12 +88,16 @@ class StudentsByAge extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div id="report" className="report">
         <div className='header'>
           <h1 className='title'>Students By Ages Report</h1>
         </div>
-        <Bar data={this.state.data} options={this.state.options} />
-      </React.Fragment>
+        <DownloadPDF
+          downloadFileName="Students by Age"
+          rootElementId="report"
+        />
+        <Bar data={this.state.data} options={this.state.options} />X
+      </div>
     );
   }
 }
