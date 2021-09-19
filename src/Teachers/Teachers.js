@@ -34,6 +34,10 @@ class Teachers extends Component {
 	goToDetails = teacherId => {
 		this.props.history.push(`/Teachers/Details/${teacherId}`);
 	};
+
+	goToEdit = teacherId => {
+		this.props.history.push(`/Teachers/Edit/${teacherId}`);
+	};
 	
 	searching = e => {
 		this.setState({ [e.target.name]: e.target.value });
