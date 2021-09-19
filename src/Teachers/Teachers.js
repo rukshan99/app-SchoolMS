@@ -34,6 +34,21 @@ class Teachers extends Component {
 	goToDetails = teacherId => {
 		this.props.history.push(`/Teachers/Details/${teacherId}`);
 	};
+
+	goToEdit = teacherId => {
+		this.props.history.push(`/Teachers/Edit/${teacherId}`);
+	};
+
+	deleteTeacher = async (teacherId, teacherName) => {
+		if (window.confirm(`Are you sure you want to delete a teacher with name ${teacherName} ?`)) {
+			try {
+				await axios.delete(`http://localhost:8000/api/v1/teachers/delete/${teacherId}`);
+				this.getTeachers();
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	};
 	
 	searching = e => {
 		this.setState({ [e.target.name]: e.target.value });
@@ -69,6 +84,7 @@ class Teachers extends Component {
 					thisCategory='Teachers'
 					adding={true}
 					goToAdd={this.goToAdd}
+					reportURL='/teachers-by-salary'
 				/>
 				{this.state.teachers && (
 					<MainTable
