@@ -73,6 +73,7 @@ class Teachers extends Component {
 					thisCategory='Teachers'
 					adding={true}
 					goToAdd={this.goToAdd}
+					reportURL='/teachers-by-salary'
 				/>
 				{this.state.teachers && (
 					<MainTable
