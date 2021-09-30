@@ -1,13 +1,17 @@
-.addForm{
+.addForm {
+  width: 100% !important;
+
+  .formGroup {
+    display: flex;
+    justify-content: space-between;
     width: 100% !important;
-    
-    .formGroup {
-      display: flex;
-      justify-content: space-between;
-      width: 100% !important;
-      margin-bottom: 25px;
-    }
-    .inp {
-      width: 40% !important;
-    }
+    margin-bottom: 25px;
   }
+  .inp {
+    width: 40% !important;
+  }
+}
+.report {
+  padding: 10px;
+  width: 800px;
+}

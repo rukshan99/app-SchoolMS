@@ -34,16 +34,17 @@ class StudentsTable extends Component {
 	};
 
 	goToEdit = studentId => {
-		this.props.history.push(`/Students/Edit/${studentId}`);
+		this.props.history.push(`/students/edit/${studentId}`);
 	};
 
 	goToDetails = studentId => {
 		this.props.history.push(`/students/${studentId}`);
 	};
+
 	delete = async (studentId, studentName) => {
-		if (window.confirm(`Are you sure you want to delete a teacher with name ${studentName} ?`)) {
+		if (window.confirm(`Are you sure you want to delete a student with name ${studentName} ?`)) {
 			try {
-				//await axios.delete(`settings/student/delete/${studentId}`); --> later connect to backend
+				await axios.delete(`http://localhost:8000/api/v1/student/delete/${studentId}`);
 				this.getStudents();
 			} catch (error) {
 				console.log(error);
@@ -117,6 +118,7 @@ class StudentsTable extends Component {
 					thisCategory='Students'
 					adding={true}
 					goToAdd={this.goToAdd}
+					reportURL='/students-by-age'
 				/>
 				{this.state.students && (
 					<MainTable

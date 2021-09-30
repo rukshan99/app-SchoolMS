@@ -12,42 +12,46 @@ class TeacherDetails extends Component {
 		doneObj: null
 	};
 
-	// getTeacher = async () => {
-	// 	this.setState({ loading: true });
-	// 	const teacherId = this.props.match.params.teacherId;
-	// 	try {
-	// 		// const res = await axios.get(`settings/teachers/${teacherId}`);
-	// 		// if (res.data.teacher.subject.length < 1) {
-	// 		// 	const doneObj = {
-	// 		// 		message: 'This Teacher has no subject, you should appoint a subject for him',
-	// 		// 		type: 'warning'
-	// 		// 	};
-	// 		// 	this.setState({ doneObj: doneObj });
-	// 		// // }
-	// 		// this.setState({ teacher: res.data.teacher, loading: false });
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 		this.setState({ loading: false });
+	getTeacher = async () => {
 
-	// 		alert('something went wrong, please try again later');
-	// 	}
-	// };
+		this.setState({ loading: true });
+		const teacherId = this.props.match.params.id;
+		console.log(teacherId);
 
-	// componentDidMount() {
-	// 	this.getTeacher();
-	// }
+		try {
+			const res = await axios.get(`http://localhost:8000/api/v1/teachers/${teacherId}`);
+			console.log(res);
+			if (res.data.teacher.subject.length < 1) {
+				const doneObj = {
+					message: 'This Teacher has no subject, you should appoint a subject for him',
+					type: 'warning'
+				};
+				this.setState({ doneObj: doneObj });
+			}
+			this.setState({ teacher: res.data.teacher, loading: false });
+		} catch (error) {
+			console.log(error);
+			this.setState({ loading: false });
+
+			alert('something went wrong, please try again later');
+		}
+	};
+
+	componentDidMount() {
+		this.getTeacher();
+	}
 	render() {
 		let subjectName;
 		let category;
-		// if (this.state.teacher) {
-		// 	if (this.state.teacher.subject.length < 1) {
-		// 		subjectName = 'Does not have a subject!';
-		// 		category = `${this.state.teacher.firstName} ${this.state.teacher.lastName} (${subjectName})`;
-		// 	} else {
-		// 		subjectName = this.state.teacher.subject[0].name;
-		// 		category = `${this.state.teacher.firstName} ${this.state.teacher.lastName} (${subjectName} Teacher)`;
-		// 	}
-		// }
+		if (this.state.teacher) {
+			if (this.state.teacher.subject.length < 1) {
+				subjectName = 'Does not have a subject!';
+				category = `${this.state.teacher.firstName} ${this.state.teacher.lastName} (${subjectName})`;
+			} else {
+				subjectName = this.state.teacher.subject[0].name;
+				category = `${this.state.teacher.firstName} ${this.state.teacher.lastName} (${subjectName} Teacher)`;
+			}
+		}
 		return (
 			<Fragment>
 				{this.state.teacher && (
