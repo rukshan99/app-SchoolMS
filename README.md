@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+## 2021S2_REG_WE_50
+## School Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Group Details
+| Student ID | Name                  | Username    |
+|------------|-----------------------|-------------|
+| IT19129204 | Jayasekara R.T.R      | rukshan99   |
+| IT19147024 | Kariyawasam K.G.S.S.K | sahan-98    |
+| IT19126234 | Jayasinghe S.L        | sjayasinghe |
+| IT19121352 | K.N.D.A Kudarachchi   | navoxya     |
 
-## Available Scripts
+### Project Description
+The project is a web-based school management system that helps to manage teachers, students, classes, and subjects. 
+The system can also be used for generating essential reports regarding teacher, student, class, and subject details.
 
-In the project directory, you can run:
+### Technologies
+As for the main technology stack, the system will be developed with MERN stack. As for other tools and technologies, 
+Azure Boards will be used for planning and managing the project, Git and GitHub for version control management, 
+SonarQube for continuous inspection of code quality, and Selenium for testing the system functionalities and interfaces.
 
-### `npm start`
-
+### Getting Started
+#### Prerequisite
+* [Git](https://git-scm.com/downloads) installed
+* [Node](https://nodejs.org/en/download/) and [NPM](https://nodejs.org/en/download/) installed
+* MongoDB (locally or [Atlas](https://www.mongodb.com/cloud/atlas))
+#### Setting up the Backend
+* Clone the project. &#8594; `git clone https://github.com/rukshan99/api-SchoolMS.git`
+* Setup environment variables
+   * Add a `.env` file in the root directory with `MONGO_USER, MONGO_PASSWORD, DB_NAME`.
+   * If you want to use MongoDB Atlas and don't know how to get the connection string, [refer this](https://docs.mongodb.com/guides/cloud/connectionstring/).
+* Install the dependencies with NPM. &#8594; `npm i`
+* Run the server
+   * Development mode &#8594; `npm run dev` (server will run on port 8000)
+   * Normal &#8594; `node index.js`
+#### Setting up the Frontend
+* Clone the project. &#8594; `git clone https://github.com/rukshan99/app-SchoolMS.git`
+* Install the dependencies with NPM. &#8594; `npm i`
+* Available scripts
+   * `npm start`\
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   * `npm test`\
+Launches the test runner in the interactive watch mode.
+   * `npm run build`\
+Builds the app for production to the `build` folder.
