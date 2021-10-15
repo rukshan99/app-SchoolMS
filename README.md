@@ -14,8 +14,8 @@ The project is a web-based school management system that helps to manage teacher
 The system can also be used for generating essential reports regarding teacher, student, class, and subject details.
 
 ### Technologies
-As for the main technology stack, the system will be developed with MERN stack. As for other tools and technologies, 
-Azure Boards will be used for planning and managing the project, Git and GitHub for version control management, 
+As for the main technology stack, the system is developed with MERN stack. As for other tools and technologies, 
+Azure Boards is used for planning and managing the project, Git and GitHub for version control management, 
 SonarQube for continuous inspection of code quality, and Selenium for testing the system functionalities and interfaces.
 
 ### Getting Started
