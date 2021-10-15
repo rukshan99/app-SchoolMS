@@ -24,7 +24,7 @@ SonarQube for continuous inspection of code quality, and Selenium for testing th
 * [Node](https://nodejs.org/en/download/) and [NPM](https://nodejs.org/en/download/) installed
 * MongoDB (locally or [Atlas](https://www.mongodb.com/cloud/atlas))
 #### Setting up the Backend
-* Clone the project. &#8594; `git clone https://github.com/rukshan99/api-SchoolMS.git`
+* Clone the [project](https://github.com/rukshan99/api-SchoolMS). &#8594; `git clone https://github.com/rukshan99/api-SchoolMS.git`
 * Setup environment variables
    * Add a `.env` file in the root directory with `MONGO_USER, MONGO_PASSWORD, DB_NAME`.
    * If you want to use MongoDB Atlas and don't know how to get the connection string, [refer this](https://docs.mongodb.com/guides/cloud/connectionstring/).
@@ -33,7 +33,7 @@ SonarQube for continuous inspection of code quality, and Selenium for testing th
    * Development mode &#8594; `npm run dev` (server will run on port 8000)
    * Normal &#8594; `node index.js`
 #### Setting up the Frontend
-* Clone the project. &#8594; `git clone https://github.com/rukshan99/app-SchoolMS.git`
+* Clone the [project](https://github.com/rukshan99/app-SchoolMS). &#8594; `git clone https://github.com/rukshan99/app-SchoolMS.git`
 * Install the dependencies with NPM. &#8594; `npm i`
 * Available scripts
    * `npm start`\
