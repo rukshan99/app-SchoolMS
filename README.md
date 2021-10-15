@@ -1,6 +1,6 @@
 ## 2021S2_REG_WE_50
 ## School Management System
-
+[![Board Status](https://dev.azure.com/rukshan99/d06702f0-b3f4-4247-971a-6b27fdc31e69/779cc9c4-70e2-439e-b7a9-41f984c6f6c0/_apis/work/boardbadge/81df8af8-945d-41cc-b762-5054d11acafc?columnOptions=1)](https://dev.azure.com/rukshan99/d06702f0-b3f4-4247-971a-6b27fdc31e69/_boards/board/t/779cc9c4-70e2-439e-b7a9-41f984c6f6c0/Microsoft.RequirementCategory/)
 ### Group Details
 | Student ID | Name                  | Username    |
 |------------|-----------------------|-------------|
